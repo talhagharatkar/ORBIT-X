@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "orbit-x"
+version = "0.1.0"
+description = "Causal Temporal World Model for Enterprise Systems"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "[Your Name]", email = "you@example.com"}]
+keywords = ["simulation", "graph", "temporal", "causal", "world-model"]
+
+# Core dependencies (pinned versions as of 2026-09-19)
+dependencies = [
+    "fastapi==0.110.0",
+    "uvicorn[standard]==0.27.0",
+    "pydantic==2.7.0",
+    "numpy==2.0.0",
+    "pandas==2.2.2",
+    "torch==2.3.0",
+    "torch-geometric==2.5.3",
+    "networkx==3.3",
+    "mlflow==2.12.0",
+    "python-dotenv==1.0.1",
+    "click==8.1.7",
+    "pytest==8.2.2",
+    "mypy==1.10.0",
+    "ruff==0.4.5"
+]
+
+[project.optional-dependencies]
+frontend = ["react", "typescript"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+
+[tool.ruff]
+select = ["E", "F", "W", "C90"]
+ignore = []
